@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:scaffold_class_app/strings.dart';
 
 class AboutPage extends StatelessWidget {
@@ -18,9 +19,9 @@ class AboutPage extends StatelessWidget {
             const SizedBox(
               height: 32,
             ),
-            const SizedBox(
+            SizedBox(
               height: 200,
-              child: Placeholder(),
+              child: SvgPicture.asset("assets/images/about.svg"),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
