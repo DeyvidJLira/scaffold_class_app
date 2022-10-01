@@ -32,12 +32,15 @@ class _InvitePageState extends State<InvitePage> {
             ),
           ),
           SizedBox(
-            width: 96,
+            width: 144,
             height: 48,
             child: ElevatedButton(
               child: Text(
                 Strings.INVITE_BUTTON,
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(color: Colors.white),
               ),
               onPressed: () {},
             ),
