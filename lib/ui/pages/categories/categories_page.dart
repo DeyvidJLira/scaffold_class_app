@@ -25,9 +25,6 @@ class _CategoriesPageState extends State<CategoriesPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(Strings.CATEGORIES_TITLE),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.sort_by_alpha))
-        ],
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16),
