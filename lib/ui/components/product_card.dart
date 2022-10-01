@@ -32,8 +32,9 @@ class _ProductCardState extends State<ProductCard> {
         ],
       ),
       footer: Container(
+        margin: const EdgeInsets.only(left: 4, right: 4, bottom: 4),
         height: 32,
-        color: Colors.black45,
+        color: Colors.black54,
         child: Center(
             child: Text(
           widget._product.name,
@@ -42,8 +43,11 @@ class _ProductCardState extends State<ProductCard> {
           style: const TextStyle(color: Colors.white),
         )),
       ),
-      child: SizedBox(
-        child: Image.network(widget._product.imageURL),
+      child: Card(
+        elevation: 4,
+        child: SizedBox(
+          child: Image.network(widget._product.imageURL),
+        ),
       ),
     );
   }

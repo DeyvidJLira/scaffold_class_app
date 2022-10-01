@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scaffold_class_app/strings.dart';
 import 'package:scaffold_class_app/ui/pages/home/home_content_page.dart';
 import 'package:scaffold_class_app/ui/pages/home/widgets/drawer_menu.dart';
-import 'package:scaffold_class_app/ui/pages/invite/invite.page.dart';
+import 'package:scaffold_class_app/ui/pages/invite/invite_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

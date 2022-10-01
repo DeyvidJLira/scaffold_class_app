@@ -30,7 +30,12 @@ class _HomeContentPageState extends State<HomeContentPage> {
           const SizedBox(height: 16),
           Text("Produtos", style: Theme.of(context).textTheme.headlineLarge),
           const SizedBox(
-            height: 16,
+            height: 8,
+          ),
+          const Divider(
+            height: 3,
+            color: Colors.black54,
+            thickness: 2,
           ),
           Expanded(
               child: GridView.count(
