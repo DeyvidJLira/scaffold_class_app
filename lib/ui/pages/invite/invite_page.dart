@@ -42,7 +42,23 @@ class _InvitePageState extends State<InvitePage> {
                     .headlineSmall!
                     .copyWith(color: Colors.white),
               ),
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (context) => AlertDialog(
+                          title: const Text(Strings.INVITE_DIALOG_TITLE),
+                          content:
+                              const Text(Strings.INVITE_DIALOG_DESCRIPTION),
+                          actions: [
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: const Text(Strings.INVITE_DIALOG_BUTTON))
+                          ],
+                        ));
+              },
             ),
           )
         ],

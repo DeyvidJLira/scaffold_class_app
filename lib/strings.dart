@@ -31,6 +31,11 @@ abstract class Strings {
   static const String INVITE_DESCRIPTION =
       "Tem gostado da experiência? Avise aos seus amigos para ter essa experiência fantástica!";
   static const String INVITE_BUTTON = "Convidar";
+
+  static const String INVITE_DIALOG_TITLE = "Convite Enviado";
+  static const String INVITE_DIALOG_DESCRIPTION =
+      "Muito obrigado por convidar seus amigos(as)!";
+  static const String INVITE_DIALOG_BUTTON = "Okay";
   //#endregion
 
   //#region About Page
