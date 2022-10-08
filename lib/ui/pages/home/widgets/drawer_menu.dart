@@ -1,9 +1,11 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:scaffold_class_app/model/user_credential.dart';
 import 'package:scaffold_class_app/strings.dart';
 import 'package:scaffold_class_app/ui/pages/about/about_page.dart';
 import 'package:scaffold_class_app/ui/pages/categories/categories_page.dart';
+import 'package:scaffold_class_app/ui/pages/login/login_page.dart';
 
 class DrawerMenu extends StatefulWidget {
   final DrawerMenuItem _drawerMenuItemActive;
@@ -19,6 +21,8 @@ class DrawerMenu extends StatefulWidget {
 class _DrawerMenuState extends State<DrawerMenu> {
   @override
   Widget build(BuildContext context) {
+    final user = ModalRoute.of(context)!.settings.arguments as UserCredential;
+
     return Drawer(
       child: ListView(
         children: [
@@ -44,10 +48,11 @@ class _DrawerMenuState extends State<DrawerMenu> {
                   height: 8,
                 ),
                 Text(
-                  Strings.HOME_DRAWER_LABEL_WELCOME,
+                  Strings.HOME_DRAWER_LABEL_WELCOME
+                      .replaceFirst("%1s", user.email),
                   style: Theme.of(context)
                       .textTheme
-                      .headlineSmall
+                      .labelLarge
                       ?.copyWith(color: Colors.white),
                 ),
                 const Expanded(child: SizedBox()),
@@ -59,8 +64,8 @@ class _DrawerMenuState extends State<DrawerMenu> {
                         foregroundColor: Colors.white,
                         side: const BorderSide(color: Colors.white, width: 2),
                       ),
-                      onPressed: () {},
-                      child: const Text(Strings.HOME_DRAWER_BUTTON_LOGIN)),
+                      onPressed: logout,
+                      child: const Text(Strings.HOME_DRAWER_BUTTON_EXIT)),
                 )
               ],
             ),
@@ -109,6 +114,11 @@ class _DrawerMenuState extends State<DrawerMenu> {
 
   bool isDrawerMenuItemTarget(DrawerMenuItem itemTarget) =>
       widget._drawerMenuItemActive == itemTarget;
+
+  void logout() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (_) => const LoginPage()));
+  }
 }
 
 enum DrawerMenuItem { HOME, CATEGORIES, INVITE, ABOUT }

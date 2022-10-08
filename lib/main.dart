@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scaffold_class_app/strings.dart';
-import 'package:scaffold_class_app/ui/pages/home/home_page.dart';
+import 'package:scaffold_class_app/ui/pages/login/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
       title: Strings.APP_NAME,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.green,
       ),
-      home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }
